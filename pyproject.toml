@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "obc-adc-designer"
-version = "0.2.0"
+version = "0.3.0"
 description = "Single-/three-phase F29H85x OBC ADC current and voltage sensing design calculator"
 readme = "README.md"
 requires-python = ">=3.11"

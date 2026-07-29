@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 from .application import calculate_design
-from .config import ConfigError, load_yaml, save_yaml, validate_config
+from .config import ConfigError, deep_merge, load_yaml, save_yaml, validate_config
 
 
 def _default_config_path() -> Path:
@@ -30,9 +30,11 @@ def build_parser() -> argparse.ArgumentParser:
     calc_cmd.add_argument("--config", required=True)
     calc_cmd.add_argument("--output", default="results/PMP23607_ADC_Sensing_Design.xlsx")
     calc_cmd.add_argument("--json", default=None, help="Optional JSON summary output")
+    calc_cmd.add_argument("--standard", default=None, help="Optional standard-layer YAML merged over the design configuration")
 
     validate_cmd = sub.add_parser("validate", help="Validate YAML inputs only")
     validate_cmd.add_argument("--config", required=True)
+    validate_cmd.add_argument("--standard", default=None, help="Optional standard-layer YAML merged over the design configuration")
     return parser
 
 
@@ -42,14 +44,33 @@ def _json_summary(result) -> dict:
         "sections": {
             name: {
                 "status": result.summary_status(name).value,
-                "metrics": {metric.key: metric.value for metric in section.metrics},
+                "metrics": {
+                    metric.key: {
+                        "label": metric.label,
+                        "value": metric.value,
+                        "unit": metric.unit,
+                        "formula": metric.formula,
+                        "inputs": metric.inputs,
+                        "source": metric.source,
+                        "status": metric.status.value,
+                        "note": metric.note,
+                    }
+                    for metric in section.metrics
+                },
                 "diagnostics": [
-                    {"code": d.code, "status": d.status.value, "message": d.message, "recommendation": d.recommendation}
+                    {
+                        "code": d.code,
+                        "scope": d.scope,
+                        "status": d.status.value,
+                        "message": d.message,
+                        "recommendation": d.recommendation,
+                    }
                     for d in section.diagnostics
                 ],
             }
             for name, section in result.sections.items()
         },
+        "assumptions": result.assumptions,
     }
 
 
@@ -67,6 +88,8 @@ def main(argv: list[str] | None = None) -> int:
             return 0
 
         cfg = load_yaml(args.config)
+        if getattr(args, "standard", None):
+            cfg = deep_merge(cfg, load_yaml(args.standard))
         validate_config(cfg)
         if args.command == "validate":
             print("Configuration is valid.")

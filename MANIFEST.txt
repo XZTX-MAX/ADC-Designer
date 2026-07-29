@@ -1,0 +1,10 @@
+OBC ADC Designer v0.3.0
+
+Core additions:
+- GB/T 40432-2021 reusable standard profile
+- Whole-product compliance checks and sensing error allocation
+- Compliance test matrix and test-equipment requirements
+- Environment, dielectric, EMC and bidirectional inverter requirements
+- CLI --standard merge support
+- Single-phase and three-phase Excel/JSON reports
+- 21 automated regression tests

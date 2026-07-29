@@ -18,6 +18,7 @@ from .calculators import (
     calculate_vac_phase,
     calculate_vdc,
 )
+from .compliance import calculate_gbt_compliance
 from .config import get, validate_config
 from .models import DesignResult
 
@@ -30,8 +31,17 @@ def calculate_design(cfg: dict[str, Any]) -> DesignResult:
     validate_config(cfg)
     result = DesignResult(profile_name=str(get(cfg, "metadata.profile", "unnamed")))
     result.assumptions = list(get(cfg, "assumptions", []))
+    if bool(get(cfg, "standard_profile.enabled", False)):
+        result.assumptions.append({
+            "topic": "Compliance layer",
+            "value": str(get(cfg, "standard_profile.name", "GB/T 40432—2021")),
+            "source_type": "national-standard profile",
+            "qualification": "Whole-product limits are kept separate from sensing-chain design targets; compliance still requires physical testing.",
+        })
 
     system = calculate_system_rating(cfg)
+    for compliance_section in calculate_gbt_compliance(cfg, system):
+        result.add_section(compliance_section)
     result.add_section(system)
     iac_design = float(system.metric_value("iac_design_peak_a"))
     idc_design = float(system.metric_value("idc_design_peak_a"))

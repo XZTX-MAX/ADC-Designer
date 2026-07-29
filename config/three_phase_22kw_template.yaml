@@ -1,8 +1,9 @@
 metadata:
   profile: THREE_PHASE_22KW_F29H85X_TEMPLATE
-  version: 0.2.0
-  description: Provisional 22 kW three-phase bidirectional one-stage OBC sensing-design template; replace all hardware-specific values before release.
-
+  version: 0.3.0
+  description: Provisional 22 kW three-phase bidirectional one-stage OBC sensing-design
+    template; replace all hardware-specific values before release.; includes GB/T
+    40432-2021 compliance layer
 system:
   phase_count: 3
   ac_voltage_basis: line_to_line
@@ -18,17 +19,15 @@ system:
   efficiency_min: 0.95
   power_factor_min: 0.99
   switching_frequency_hz: 100000.0
-  overload_factor: 1.10
-  default_range_margin: 1.20
+  overload_factor: 1.1
+  default_range_margin: 1.2
   bidirectional: true
-
 control:
   iac_loop_bandwidth_hz: 3000.0
   idc_loop_bandwidth_hz: 1500.0
   vdc_loop_bandwidth_hz: 20.0
   pll_bandwidth_hz: 30.0
   line_frequency_hz: 50.0
-
 targets:
   bandwidth_multiplier: 5.0
   iac_phase_loss_deg: 15.0
@@ -36,10 +35,9 @@ targets:
   vdc_phase_loss_deg: 5.0
   vac_line_phase_error_deg: 0.5
   vac_pll_phase_loss_deg: 5.0
-  phase_current_gain_mismatch_percent: 0.20
-  phase_voltage_gain_mismatch_percent: 0.20
+  phase_current_gain_mismatch_percent: 0.2
+  phase_voltage_gain_mismatch_percent: 0.2
   phase_zero_code_mismatch: 5.0
-
 adc:
   resolution_bits: 12
   reference_voltage_v: 3.0
@@ -54,20 +52,21 @@ adc:
     exact_sample_capacitance_f: null
     exact_switch_resistance_ohm: null
     exact_source_resistance_ohm: null
-
 environment:
   temperature_min_c: -40.0
   temperature_max_c: 125.0
   temperature_span_c: 165.0
-
 channels:
   iac:
-    phase_names: [A, B, C]
+    phase_names:
+    - A
+    - B
+    - C
     reconstruction: none
-    range_margin: 1.20
+    range_margin: 1.2
     accuracy_target_percent_fs: 0.5
-    adc_headroom_low_v: 0.20
-    adc_headroom_high_v: 0.20
+    adc_headroom_low_v: 0.2
+    adc_headroom_high_v: 0.2
     hall:
       sensor_zero_output_v: 1.65
       sensor_sensitivity_v_per_a: 0.0125
@@ -75,9 +74,9 @@ channels:
       sensor_bandwidth_hz: 500000.0
     filter:
       resistor_ohm: 100.0
-      capacitor_f: 1.0e-8
+      capacitor_f: 1.0e-08
     delay:
-      sensor_s: 2.0e-7
+      sensor_s: 2.0e-07
       isolation_s: 0.0
       adc_s: null
       isr_s: null
@@ -90,23 +89,22 @@ channels:
         hall:
           front_end_gain: 1.0004
     error_sources: []
-
   idc:
-    range_margin: 1.20
+    range_margin: 1.2
     accuracy_target_percent_fs: 0.5
-    adc_headroom_low_v: 0.20
-    adc_headroom_high_v: 0.20
+    adc_headroom_low_v: 0.2
+    adc_headroom_high_v: 0.2
     shunt:
       resistance_ohm: 0.0005
     amplifier:
-      input_clip_v: 0.050
+      input_clip_v: 0.05
       reference_voltage_v: 3.3
-      input_range_utilization: 0.80
+      input_range_utilization: 0.8
       input_offset_v: null
       bandwidth_hz: 300000.0
     filter:
       resistor_ohm: 330.0
-      capacitor_f: 2.2e-8
+      capacitor_f: 2.2e-08
     delay:
       sensor_s: 0.0
       isolation_s: null
@@ -114,10 +112,12 @@ channels:
       isr_s: null
       pwm_s: null
     error_sources: []
-
   vac:
     measurement_basis: phase_to_neutral
-    phase_names: [A, B, C]
+    phase_names:
+    - A
+    - B
+    - C
     range_margin: 1.15
     accuracy_target_percent_fs: 0.5
     divider:
@@ -127,14 +127,14 @@ channels:
       gain_v_per_v: 1.0
       reference_voltage_v: 1.65
       linear_input_abs_max_v: 1.0
-      input_range_utilization: 0.90
+      input_range_utilization: 0.9
       bandwidth_hz: 145000.0
     filter:
       resistor_ohm: 100.0
-      capacitor_f: 4.7e-9
+      capacitor_f: 4.7e-09
     delay:
       sensor_s: 0.0
-      isolation_s: 2.9e-6
+      isolation_s: 2.9e-06
       adc_s: null
       isr_s: null
       pwm_s: null
@@ -146,21 +146,20 @@ channels:
         divider:
           low_side_ohm: 3301.0
     error_sources: []
-
   vdc:
     range_margin: 1.15
     accuracy_target_percent_fs: 0.5
     architecture: divider
     divider:
       low_side_ohm: 10000.0
-      target_sense_v: 2.70
+      target_sense_v: 2.7
     direct_hv:
       high_voltage_clip_v: 2050.0
       reference_voltage_v: 3.3
       bandwidth_hz: null
     filter:
       resistor_ohm: 499.0
-      capacitor_f: 4.7e-8
+      capacitor_f: 4.7e-08
     delay:
       sensor_s: null
       isolation_s: null
@@ -168,78 +167,162 @@ channels:
       isr_s: null
       pwm_s: null
     error_sources: []
-
 sampling:
   trigger_source: EPWM1_SOCA
   trigger_position: PWM_CENTER
   simultaneous_required: true
   samples_per_pwm_period: 1
-  maximum_channel_skew_s: 1.0e-7
-  max_skew_error_percent_fs: 0.20
+  maximum_channel_skew_s: 1.0e-07
+  max_skew_error_percent_fs: 0.2
   max_current_slew_rate_a_per_s: 2.0e6
   max_voltage_slew_rate_v_per_s: 2.0e5
   channels:
-    - name: IAC_A
-      quantity: current
-      adc_module: ADCA
-      soc: 0
-      aperture_delay_s: 0.0
-    - name: IAC_B
-      quantity: current
-      adc_module: ADCB
-      soc: 0
-      aperture_delay_s: 0.0
-    - name: IAC_C
-      quantity: current
-      adc_module: ADCC
-      soc: 0
-      aperture_delay_s: 0.0
-    - name: VAC_A
-      quantity: voltage
-      adc_module: ADCD
-      soc: 0
-      aperture_delay_s: 0.0
-    - name: VAC_B
-      quantity: voltage
-      adc_module: ADCE
-      soc: 0
-      aperture_delay_s: 0.0
-    - name: VAC_C
-      quantity: voltage
-      adc_module: ADCD
-      soc: 1
-      aperture_delay_s: 6.0e-8
-
+  - name: IAC_A
+    quantity: current
+    adc_module: ADCA
+    soc: 0
+    aperture_delay_s: 0.0
+  - name: IAC_B
+    quantity: current
+    adc_module: ADCB
+    soc: 0
+    aperture_delay_s: 0.0
+  - name: IAC_C
+    quantity: current
+    adc_module: ADCC
+    soc: 0
+    aperture_delay_s: 0.0
+  - name: VAC_A
+    quantity: voltage
+    adc_module: ADCD
+    soc: 0
+    aperture_delay_s: 0.0
+  - name: VAC_B
+    quantity: voltage
+    adc_module: ADCE
+    soc: 0
+    aperture_delay_s: 0.0
+  - name: VAC_C
+    quantity: voltage
+    adc_module: ADCD
+    soc: 1
+    aperture_delay_s: 6.0e-08
 assumptions:
-  - topic: Three-phase power level
-    value: 22 kW
-    source_type: project-context template
-    qualification: Replace with the actual platform continuous and overload ratings.
-  - topic: AC voltage range
-    value: 304–480 Vrms line-to-line
-    source_type: provisional engineering example
-    qualification: Not asserted as a released PMP41186 specification.
-  - topic: DC voltage range
-    value: 550–850 V
-    source_type: provisional engineering example
-    qualification: Replace with actual battery and surge limits.
-  - topic: Phase-current sensing
-    value: Three direct Hall channels on independent ADC modules
-    source_type: architecture example
-    qualification: Confirm F29H85x package pinout, ADC mode and resource allocation.
-  - topic: Phase-voltage sensing
-    value: Three phase-to-neutral channels
-    source_type: architecture example
-    qualification: For a three-wire system without neutral, use line-to-line sensing or a validated virtual-neutral network.
-  - topic: Sampling aperture delay
-    value: 0 ns for phase currents; up to 60 ns across all configured channels
-    source_type: provisional timing model
-    qualification: Replace with measured or data-sheet-bounded aperture timing.
-  - topic: Phase matching limits
-    value: 0.2% gain; 5 ADC codes zero mismatch
-    source_type: engineering default
-    qualification: Provisional; replace with the control and THD error budget.
-  - topic: Component error budgets
-    value: Empty by default
-    source_type: fail-closed design rule
-    qualification: Enter exact maximum errors and drift before design release.
+- topic: Three-phase power level
+  value: 22 kW
+  source_type: project-context template
+  qualification: Replace with the actual platform continuous and overload ratings.
+- topic: AC voltage range
+  value: 304–480 Vrms line-to-line
+  source_type: provisional engineering example
+  qualification: Not asserted as a released PMP41186 specification.
+- topic: DC voltage range
+  value: 550–850 V
+  source_type: provisional engineering example
+  qualification: Replace with actual battery and surge limits.
+- topic: Phase-current sensing
+  value: Three direct Hall channels on independent ADC modules
+  source_type: architecture example
+  qualification: Confirm F29H85x package pinout, ADC mode and resource allocation.
+- topic: Phase-voltage sensing
+  value: Three phase-to-neutral channels
+  source_type: architecture example
+  qualification: For a three-wire system without neutral, use line-to-line sensing
+    or a validated virtual-neutral network.
+- topic: Sampling aperture delay
+  value: 0 ns for phase currents; up to 60 ns across all configured channels
+  source_type: provisional timing model
+  qualification: Replace with measured or data-sheet-bounded aperture timing.
+- topic: Phase matching limits
+  value: 0.2% gain; 5 ADC codes zero mismatch
+  source_type: engineering default
+  qualification: Provisional; replace with the control and THD error budget.
+- topic: Component error budgets
+  value: Empty by default
+  source_type: fail-closed design rule
+  qualification: Enter exact maximum errors and drift before design release.
+standard_profile:
+  enabled: true
+  name: GB/T 40432-2021
+  source_document: GBT+40432-2021.pdf
+  scope:
+    max_dc_output_v: 1500.0
+  ac_input:
+    single_phase_nominal_v: 220.0
+    three_phase_line_nominal_v: 380.0
+    voltage_tolerance_percent: 15.0
+    nominal_frequency_hz: 50.0
+    frequency_tolerance_hz: 1.0
+    three_phase_phase_deviation_deg: 3.0
+  current:
+    startup_inrush_peak_ratio_max: 1.2
+  dc_output:
+    voltage_error_percent_max: 1.0
+    current_error_threshold_a: 10.0
+    current_error_above_threshold_percent: 5.0
+    current_error_at_or_below_threshold_a: 0.5
+    voltage_ripple_factor_percent_max: 5.0
+    startup_voltage_overshoot_percent_max: 10.0
+    startup_current_overshoot_percent_max: 5.0
+  power_quality:
+    pf_rated_min: 0.98
+    pf_half_load_min: 0.95
+    efficiency_class: E1
+    average_efficiency_min: 0.94
+    efficiency_voltage_points: 10
+    efficiency_warmup_min: 30
+  design_allocation:
+    sensing_error_budget_fraction: 0.5
+  test_equipment:
+    ripple_scope_bandwidth_hz: 20000000.0
+    ripple_scope_timebase_min_s_per_div: 0.5
+  environment:
+    storage_temperature_min_c: -40.0
+    operating_temperature_min_c: -20.0
+    storage_temperature_max_c: 85.0
+    operating_temperature_max_liquid_c: 65.0
+    operating_temperature_max_air_c: 55.0
+    relative_humidity_min_percent: 5.0
+    relative_humidity_max_percent: 95.0
+    altitude_max_m: 2000.0
+  safety:
+    udmax_v: null
+    actual_isolation_withstand_rms_v: null
+  emc:
+    surge_differential_v: 1000.0
+    surge_common_mode_v: 2000.0
+    eft_level: 3
+    eft_repetition_hz: 5000.0
+    radiated_immunity_min_hz: 80000000.0
+    radiated_immunity_max_hz: 2000000000.0
+    radiated_immunity_v_per_m: 75.0
+  voltage_dip_tests:
+  - voltage_percent: 80.0
+    duration_cycles_50hz: 250
+    duration_cycles_60hz: 300
+    functional_status: II
+  - voltage_percent: 70.0
+    duration_cycles_50hz: 25
+    duration_cycles_60hz: 30
+    functional_status: II
+  - voltage_percent: 40.0
+    duration_cycles_50hz: 10
+    duration_cycles_60hz: 12
+    functional_status: III
+  - voltage_percent: 0.0
+    duration_cycles_50hz: 250
+    duration_cycles_60hz: 300
+    functional_status: III
+  inverter:
+    single_phase_nominal_v: 220.0
+    three_phase_line_nominal_v: 380.0
+    voltage_accuracy_percent: 5.0
+    frequency_nominal_hz: 50.0
+    frequency_tolerance_hz: 0.5
+    load_step_voltage_deviation_percent: 15.0
+    recovery_time_max_ms: 20.0
+    voltage_thd_resistive_percent: 5.0
+    voltage_thd_non_resistive_percent: 8.0
+    grid_current_dc_component_percent: 0.5
+    grid_current_dc_component_min_a: 0.005
+    efficiency_min: 0.92

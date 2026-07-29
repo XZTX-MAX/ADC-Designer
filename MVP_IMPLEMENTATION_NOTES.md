@@ -25,3 +25,7 @@ The common IAC/VAC circuit is inherited by each phase. `phase_overrides` can cha
 - Exact F29H85x ADC acquisition model remains fail-closed until authoritative internal capacitance/switch resistance data are entered.
 - Component WC/RSS errors remain `NOT_EVALUATED` in both example profiles.
 - The 22 kW three-phase profile is an engineering template, not a released product specification.
+
+## v0.3 GB/T compliance architecture
+
+The standard layer is deterministic and isolated from the sensing-design equations. `standard_profile` is evaluated by `compliance.py`; it neither mutates nor silently narrows `system.vac_min_rms_v`, `system.vac_max_rms_v`, channel range margins, ADC timing or control bandwidths. Compliance metrics include the applicable GB/T clause in the source field. System-level EMC, isolation and inverter requirements remain `NOT_EVALUATED` when component/system evidence is not provided.

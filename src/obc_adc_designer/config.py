@@ -166,3 +166,52 @@ def validate_config(data: dict[str, Any]) -> None:
                 raise ConfigError(f"Sampling channel {name} aperture_delay_s must be non-negative.")
         if len(assignment_names) != len(set(assignment_names)):
             raise ConfigError("sampling.channels names must be unique.")
+
+
+    if bool(get(data, "standard_profile.enabled", False)):
+        standard_required = [
+            "standard_profile.name",
+            "standard_profile.scope.max_dc_output_v",
+            "standard_profile.ac_input.single_phase_nominal_v",
+            "standard_profile.ac_input.three_phase_line_nominal_v",
+            "standard_profile.ac_input.voltage_tolerance_percent",
+            "standard_profile.ac_input.nominal_frequency_hz",
+            "standard_profile.ac_input.frequency_tolerance_hz",
+            "standard_profile.current.startup_inrush_peak_ratio_max",
+            "standard_profile.dc_output.voltage_error_percent_max",
+            "standard_profile.dc_output.current_error_threshold_a",
+            "standard_profile.dc_output.current_error_above_threshold_percent",
+            "standard_profile.dc_output.current_error_at_or_below_threshold_a",
+            "standard_profile.dc_output.voltage_ripple_factor_percent_max",
+            "standard_profile.power_quality.pf_rated_min",
+            "standard_profile.power_quality.pf_half_load_min",
+            "standard_profile.power_quality.average_efficiency_min",
+            "standard_profile.design_allocation.sensing_error_budget_fraction",
+        ]
+        for item in standard_required:
+            require(data, item)
+
+        tolerance = float(require(data, "standard_profile.ac_input.voltage_tolerance_percent"))
+        if not 0 < tolerance < 100:
+            raise ConfigError("standard_profile.ac_input.voltage_tolerance_percent must be between 0 and 100.")
+        allocation = float(require(data, "standard_profile.design_allocation.sensing_error_budget_fraction"))
+        if not 0 < allocation <= 1:
+            raise ConfigError("standard_profile.design_allocation.sensing_error_budget_fraction must be in (0, 1].")
+        for item in [
+            "standard_profile.power_quality.pf_rated_min",
+            "standard_profile.power_quality.pf_half_load_min",
+            "standard_profile.power_quality.average_efficiency_min",
+        ]:
+            value = float(require(data, item))
+            if not 0 < value <= 1:
+                raise ConfigError(f"{item} must be in the interval (0, 1].")
+
+        dip_tests = get(data, "standard_profile.voltage_dip_tests", [])
+        if not isinstance(dip_tests, list):
+            raise ConfigError("standard_profile.voltage_dip_tests must be a list.")
+        for index, item in enumerate(dip_tests):
+            if not isinstance(item, dict):
+                raise ConfigError(f"standard_profile.voltage_dip_tests[{index}] must be a mapping.")
+            for key in ("voltage_percent", "duration_cycles_50hz", "functional_status"):
+                if key not in item:
+                    raise ConfigError(f"standard_profile.voltage_dip_tests[{index}] is missing {key}.")
