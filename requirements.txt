@@ -1,0 +1,2 @@
+PyYAML>=6.0
+# artifact_tool is required for Excel export and is supplied by the target ChatGPT/enterprise runtime.

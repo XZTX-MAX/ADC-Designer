@@ -1,0 +1,1799 @@
+{
+  "profile": "THREE_PHASE_22KW_F29H85X_TEMPLATE",
+  "sections": {
+    "10_System_Rating": {
+      "status": "PASS",
+      "metrics": {
+        "phase_count": {
+          "value": 3,
+          "unit": "phase",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "ac_voltage_basis": {
+          "value": "line_to_line",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "phase_unbalance_factor": {
+          "value": 1.05,
+          "unit": "pu",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "iac_rms_max_a": {
+          "value": 46.64648989297531,
+          "unit": "A",
+          "formula": "Ppeak/(sqrt(3)*VLL_min*eta*PF)*Kunbalance",
+          "status": "PASS",
+          "note": ""
+        },
+        "iac_peak_a": {
+          "value": 65.9680986437452,
+          "unit": "A",
+          "formula": "sqrt(2)*Iac_rms",
+          "status": "PASS",
+          "note": ""
+        },
+        "iac_design_peak_a": {
+          "value": 87.07789020974366,
+          "unit": "A",
+          "formula": "Iac_peak*Koverload*Kmargin",
+          "status": "PASS",
+          "note": ""
+        },
+        "idc_continuous_max_a": {
+          "value": 42.10526315789474,
+          "unit": "A",
+          "formula": "Ppeak/(Vdc_min*eta)",
+          "status": "PASS",
+          "note": ""
+        },
+        "idc_design_peak_a": {
+          "value": 55.57894736842106,
+          "unit": "A",
+          "formula": "Idc_cont*Koverload*Kmargin",
+          "status": "PASS",
+          "note": ""
+        },
+        "three_phase_apparent_power_va": {
+          "value": 24561.40350877193,
+          "unit": "VA",
+          "formula": "sqrt(3)*VLL*Iline or 3*Vphase*Iphase",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "15_Phase_Channels": {
+      "status": "PASS",
+      "metrics": {
+        "current_phase_channels": {
+          "value": "A, B, C",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_phase_channels": {
+          "value": "A, B, C",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_measurement_basis": {
+          "value": "phase_to_neutral",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_reconstruction": {
+          "value": "none",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "physical_current_sensor_count": {
+          "value": 3,
+          "unit": "channel",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "physical_voltage_sensor_count": {
+          "value": 3,
+          "unit": "channel",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "20_IAC_A": {
+      "status": "PASS",
+      "metrics": {
+        "design_current_a": {
+          "value": 87.07789020974366,
+          "unit": "A",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_sensitivity_v_per_a": {
+          "value": 0.0125,
+          "unit": "V/A",
+          "formula": "Sensor sensitivity*front-end gain",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_sensitivity_v_per_a": {
+          "value": 0.013206567100213455,
+          "unit": "V/A",
+          "formula": "min((Vzero-Vmin)/Imax,(Vmax-Vzero)/Imax)",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_front_end_gain": {
+          "value": 1.0565253680170763,
+          "unit": "V/V",
+          "formula": "Seff_max/Ssensor",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_v": {
+          "value": 1.65,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_code": {
+          "value": 2252.7999999999997,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_v": {
+          "value": 0.5615263723782042,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_v": {
+          "value": 2.7384736276217954,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_code": {
+          "value": 766.6706737537082,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_code": {
+          "value": 3738.929326246291,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_per_code_a": {
+          "value": 0.05859375,
+          "unit": "A/code",
+          "formula": "Vlsb/Seff",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_utilization": {
+          "value": 0.725649085081197,
+          "unit": "pu",
+          "formula": "(Vmax-Vmin)/Vref",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "20_IAC_B": {
+      "status": "PASS",
+      "metrics": {
+        "design_current_a": {
+          "value": 87.07789020974366,
+          "unit": "A",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_sensitivity_v_per_a": {
+          "value": 0.012493750000000001,
+          "unit": "V/A",
+          "formula": "Sensor sensitivity*front-end gain",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_sensitivity_v_per_a": {
+          "value": 0.013216041376611433,
+          "unit": "V/A",
+          "formula": "min((Vzero-Vmin)/Imax,(Vmax-Vzero)/Imax)",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_front_end_gain": {
+          "value": 1.0572833101289145,
+          "unit": "V/V",
+          "formula": "Seff_max/Ssensor",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_v": {
+          "value": 1.649175,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_code": {
+          "value": 2251.6736,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_v": {
+          "value": 0.561245609192015,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_v": {
+          "value": 2.737104390807985,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_code": {
+          "value": 766.2873384168312,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_code": {
+          "value": 3737.059861583169,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_per_code_a": {
+          "value": 0.05862306153076537,
+          "unit": "A/code",
+          "formula": "Vlsb/Seff",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_utilization": {
+          "value": 0.7252862605386566,
+          "unit": "pu",
+          "formula": "(Vmax-Vmin)/Vref",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "20_IAC_C": {
+      "status": "PASS",
+      "metrics": {
+        "design_current_a": {
+          "value": 87.07789020974366,
+          "unit": "A",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_sensitivity_v_per_a": {
+          "value": 0.012505,
+          "unit": "V/A",
+          "formula": "Sensor sensitivity*front-end gain",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_sensitivity_v_per_a": {
+          "value": 0.013198987679095072,
+          "unit": "V/A",
+          "formula": "min((Vzero-Vmin)/Imax,(Vmax-Vzero)/Imax)",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_front_end_gain": {
+          "value": 1.0559190143276058,
+          "unit": "V/V",
+          "formula": "Seff_max/Ssensor",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_v": {
+          "value": 1.6506599999999998,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_code": {
+          "value": 2253.7011199999997,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_v": {
+          "value": 0.5617509829271554,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_v": {
+          "value": 2.739569017072844,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_code": {
+          "value": 766.9773420232095,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_code": {
+          "value": 3740.4248979767895,
+          "unit": "code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_per_code_a": {
+          "value": 0.058570321871251496,
+          "unit": "A/code",
+          "formula": "Vlsb/Seff",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_utilization": {
+          "value": 0.7259393447152295,
+          "unit": "pu",
+          "formula": "(Vmax-Vmin)/Vref",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "21_IAC_A_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 15000.0,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9998223944475859,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 1.0798721171883547,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -1.4450701162052872,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "21_IAC_A_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -1.4 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "21_IAC_B_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 15000.0,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9998223944475859,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 1.0798721171883547,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -1.4450701162052872,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "21_IAC_B_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -1.4 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "21_IAC_C_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 15000.0,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9998223944475859,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 1.0798721171883547,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -1.4450701162052872,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "21_IAC_C_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -1.4 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "40_VAC_A": {
+      "status": "PASS",
+      "metrics": {
+        "vac_design_peak_v": {
+          "value": 450.7061126721048,
+          "unit": "V",
+          "formula": "Vac_rms_max*sqrt(2)*Kmargin",
+          "status": "PASS",
+          "note": ""
+        },
+        "divider_ratio": {
+          "value": 0.0018299783729828648,
+          "unit": "V/V",
+          "formula": "Rbottom/(Rtop+Rbottom)",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_input_peak_v": {
+          "value": 0.82478243876113,
+          "unit": "V",
+          "formula": "Vdesign*Kdivider",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_linear_limit_v": {
+          "value": 1.0,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "recommended_high_side_ohm": {
+          "value": 1649289.0797977175,
+          "unit": "ohm",
+          "formula": "Rbottom*(Vdesign/Vtarget-1)",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_output_min_v": {
+          "value": 0.8252175612388699,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_output_max_v": {
+          "value": 2.47478243876113,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "vac_per_code_v": {
+          "value": 0.4002352627840909,
+          "unit": "V/code",
+          "formula": "Vlsb/(Kdivider*Gain)",
+          "status": "PASS",
+          "note": ""
+        },
+        "measurement_basis": {
+          "value": "phase_to_neutral",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "40_VAC_B": {
+      "status": "PASS",
+      "metrics": {
+        "vac_design_peak_v": {
+          "value": 450.7061126721048,
+          "unit": "V",
+          "formula": "Vac_rms_max*sqrt(2)*Kmargin",
+          "status": "PASS",
+          "note": ""
+        },
+        "divider_ratio": {
+          "value": 0.0018294248485692056,
+          "unit": "V/V",
+          "formula": "Rbottom/(Rtop+Rbottom)",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_input_peak_v": {
+          "value": 0.8245329619243806,
+          "unit": "V",
+          "formula": "Vdesign*Kdivider",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_linear_limit_v": {
+          "value": 1.0,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "recommended_high_side_ohm": {
+          "value": 1648789.2952280818,
+          "unit": "ohm",
+          "formula": "Rbottom*(Vdesign/Vtarget-1)",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_output_min_v": {
+          "value": 0.8254670380756193,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_output_max_v": {
+          "value": 2.4745329619243805,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "vac_per_code_v": {
+          "value": 0.4003563609474462,
+          "unit": "V/code",
+          "formula": "Vlsb/(Kdivider*Gain)",
+          "status": "PASS",
+          "note": ""
+        },
+        "measurement_basis": {
+          "value": "phase_to_neutral",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "40_VAC_C": {
+      "status": "PASS",
+      "metrics": {
+        "vac_design_peak_v": {
+          "value": 450.7061126721048,
+          "unit": "V",
+          "formula": "Vac_rms_max*sqrt(2)*Kmargin",
+          "status": "PASS",
+          "note": ""
+        },
+        "divider_ratio": {
+          "value": 0.0018305318967826226,
+          "unit": "V/V",
+          "formula": "Rbottom/(Rtop+Rbottom)",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_input_peak_v": {
+          "value": 0.8250319153211904,
+          "unit": "V",
+          "formula": "Vdesign*Kdivider",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_linear_limit_v": {
+          "value": 1.0,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "recommended_high_side_ohm": {
+          "value": 1649788.8643673533,
+          "unit": "ohm",
+          "formula": "Rbottom*(Vdesign/Vtarget-1)",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_output_min_v": {
+          "value": 0.8249680846788096,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_output_max_v": {
+          "value": 2.4750319153211904,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "vac_per_code_v": {
+          "value": 0.4001142379913284,
+          "unit": "V/code",
+          "formula": "Vlsb/(Kdivider*Gain)",
+          "status": "PASS",
+          "note": ""
+        },
+        "measurement_basis": {
+          "value": "phase_to_neutral",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "42_VAC_A_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 338627.5384933943,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 145000.0,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 342.9015690828403,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9999999785969091,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 0.011854299040457476,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -1.6897578570081766,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "42_VAC_A_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -1.7 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "42_VAC_B_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 338627.5384933943,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 145000.0,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 342.9015690828403,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9999999785969091,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 0.011854299040457476,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -1.6897578570081766,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "42_VAC_B_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -1.7 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "42_VAC_C_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 338627.5384933943,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 145000.0,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 342.9015690828403,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9999999785969091,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 0.011854299040457476,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -1.6897578570081766,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "42_VAC_C_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -1.7 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "16_Phase_Matching": {
+      "status": "PASS",
+      "metrics": {
+        "phase_current_gain_mismatch_percent": {
+          "value": 0.09000300009999618,
+          "unit": "%",
+          "formula": "(max(Seff)-min(Seff))/mean(Seff)*100",
+          "status": "PASS",
+          "note": ""
+        },
+        "phase_current_zero_mismatch_code": {
+          "value": 2.0275199999996403,
+          "unit": "code",
+          "formula": "max(Nzero)-min(Nzero)",
+          "status": "PASS",
+          "note": ""
+        },
+        "phase_voltage_gain_mismatch_percent": {
+          "value": 0.06049515283266774,
+          "unit": "%",
+          "formula": "(max(Kdiv)-min(Kdiv))/mean(Kdiv)*100",
+          "status": "PASS",
+          "note": ""
+        },
+        "phase_current_gain_mismatch_limit_percent": {
+          "value": 0.2,
+          "unit": "%",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "phase_voltage_gain_mismatch_limit_percent": {
+          "value": 0.2,
+          "unit": "%",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "52_Sampling_Sync": {
+      "status": "PASS",
+      "metrics": {
+        "trigger_source": {
+          "value": "EPWM1_SOCA",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "trigger_position": {
+          "value": "PWM_CENTER",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "simultaneous_required": {
+          "value": true,
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_channel_count": {
+          "value": 6,
+          "unit": "channel",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "trigger_source_count": {
+          "value": 1,
+          "unit": "source",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_adc_module_count": {
+          "value": 3,
+          "unit": "module",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "assignment_IAC_A": {
+          "value": "ADCA/SOC0",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": "aperture_delay_s=0.0"
+        },
+        "assignment_IAC_B": {
+          "value": "ADCB/SOC0",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": "aperture_delay_s=0.0"
+        },
+        "assignment_IAC_C": {
+          "value": "ADCC/SOC0",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": "aperture_delay_s=0.0"
+        },
+        "assignment_VAC_A": {
+          "value": "ADCD/SOC0",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": "aperture_delay_s=0.0"
+        },
+        "assignment_VAC_B": {
+          "value": "ADCE/SOC0",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": "aperture_delay_s=0.0"
+        },
+        "assignment_VAC_C": {
+          "value": "ADCD/SOC1",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": "aperture_delay_s=6e-08"
+        },
+        "maximum_channel_skew_s": {
+          "value": 6e-08,
+          "unit": "s",
+          "formula": "max(t_aperture)-min(t_aperture)",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_channel_skew_limit_s": {
+          "value": 1e-07,
+          "unit": "s",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "line_frequency_angle_skew_deg": {
+          "value": 0.0010799999999999998,
+          "unit": "deg",
+          "formula": "360*fline*DeltaT",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_frequency_angle_skew_deg": {
+          "value": 2.1599999999999997,
+          "unit": "deg",
+          "formula": "360*fsw*DeltaT",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_skew_error_a": {
+          "value": 0.12,
+          "unit": "A",
+          "formula": "max(di/dt)*DeltaT",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_skew_error_percent_fs": {
+          "value": 0.13780765669787953,
+          "unit": "%FS",
+          "formula": "DeltaI/Iphase_design*100",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_skew_error_v": {
+          "value": 0.011999999999999999,
+          "unit": "V",
+          "formula": "max(dv/dt)*DeltaT",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "30_IDC_Shunt": {
+      "status": "WARNING",
+      "metrics": {
+        "actual_shunt_ohm": {
+          "value": 0.0005,
+          "unit": "ohm",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "max_shunt_adc_ohm": {
+          "value": 0.0006270087235996327,
+          "unit": "ohm",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "max_shunt_input_ohm": {
+          "value": 0.0007196969696969697,
+          "unit": "ohm",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "recommended_shunt_max_ohm": {
+          "value": 0.0006270087235996327,
+          "unit": "ohm",
+          "formula": "min(R_adc,R_input)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_sensitivity_v_per_a": {
+          "value": 0.016499999999999997,
+          "unit": "V/A",
+          "formula": "Rshunt*Vref/(2*Vclip)",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_v": {
+          "value": 1.65,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_v": {
+          "value": 0.7329473684210526,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_v": {
+          "value": 2.5670526315789473,
+          "unit": "V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_per_code_a": {
+          "value": 0.04438920454545455,
+          "unit": "A/code",
+          "formula": "Vlsb/Seff",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_utilization": {
+          "value": 0.6113684210526316,
+          "unit": "pu",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "continuous_shunt_power_w": {
+          "value": 0.8864265927977841,
+          "unit": "W",
+          "formula": "Irms^2*R",
+          "status": "PASS",
+          "note": ""
+        },
+        "peak_shunt_power_w": {
+          "value": 1.5445096952908595,
+          "unit": "W",
+          "formula": "Ipeak^2*R",
+          "status": "PASS",
+          "note": ""
+        },
+        "equivalent_offset_current_a": {
+          "value": null,
+          "unit": "A",
+          "formula": "Vos/Rshunt",
+          "status": "NOT_EVALUATED",
+          "note": "Enter channels.idc.amplifier.input_offset_v."
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IDC_OFFSET_UNKNOWN",
+          "scope": "30_IDC_Shunt",
+          "status": "NOT_EVALUATED",
+          "message": "IDC amplifier input offset is not configured.",
+          "recommendation": "Enter the exact device maximum offset before design release."
+        }
+      ]
+    },
+    "41_VDC": {
+      "status": "PASS",
+      "metrics": {
+        "vdc_design_max_v": {
+          "value": 977.4999999999999,
+          "unit": "V",
+          "formula": "Vdc_max*Kmargin",
+          "status": "PASS",
+          "note": ""
+        },
+        "architecture": {
+          "value": "divider",
+          "unit": "",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_high_side_ohm": {
+          "value": 3610370.3703703694,
+          "unit": "ohm",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "divider_ratio": {
+          "value": 0.0027621483375959086,
+          "unit": "V/V",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "vdc_per_code_v": {
+          "value": 0.26516384548611105,
+          "unit": "V/code",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "31_IDC_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 21922.16846995804,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 21922.16846995804,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 7500.0,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9976672736559256,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 3.914298915972547,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -13.386183564121858,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "31_IDC_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -13.4 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "43_VDC_Filter": {
+      "status": "PASS",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "value": 6786.123015899687,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "value": 6786.123015899687,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "value": 228.60104605522685,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "value": 0.9999956570611909,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "value": 0.16886111109563232,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "value": -23.387519425398345,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "50_ADC_Timing": {
+      "status": "WARNING",
+      "metrics": {
+        "adc_lsb_v": {
+          "value": 0.000732421875,
+          "unit": "V/code",
+          "formula": "Vref/2^N",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_sample_cycles": {
+          "value": 20,
+          "unit": "SYSCLK",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_sample_time_s": {
+          "value": 1e-07,
+          "unit": "s",
+          "formula": "cycles/fsysclk",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_tau_s": {
+          "value": 3e-09,
+          "unit": "s",
+          "formula": "Rsource*Ctotal",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_required_time_s": {
+          "value": 2.7032740041837863e-08,
+          "unit": "s",
+          "formula": "-tau*ln(target_lsb/2^N)",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_recommended_time_s": {
+          "value": 4.0549110062756793e-08,
+          "unit": "s",
+          "formula": "treq*Ksafety",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_recommended_cycles": {
+          "value": 9,
+          "unit": "SYSCLK",
+          "formula": "ceil(trec*fsysclk)",
+          "status": "PASS",
+          "note": ""
+        },
+        "exact_recommended_cycles": {
+          "value": null,
+          "unit": "SYSCLK",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": "Enter F29H85x sample capacitor and switch resistance from the applicable data sheet/model."
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "ADC_EXACT_MISSING",
+          "scope": "50_ADC_Timing",
+          "status": "NOT_EVALUATED",
+          "message": "Exact ADC acquisition model is not evaluated because MCU internal parameters are not provided.",
+          "recommendation": "Populate exact_sample_capacitance_f, exact_switch_resistance_ohm and exact_source_resistance_ohm."
+        }
+      ]
+    },
+    "55_IAC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "value": 2e-07,
+          "unit": "s",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "value": 0.0,
+          "unit": "s",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "value": 2e-07,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "value": 0.216,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IAC_DELAY_MISSING",
+          "scope": "55_IAC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "55_IDC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "value": 0.0,
+          "unit": "s",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "value": 0.0,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "value": 0.0,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IDC_DELAY_MISSING",
+          "scope": "55_IDC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: isolation, adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "55_VAC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "value": 0.0,
+          "unit": "s",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "value": 2.9e-06,
+          "unit": "s",
+          "formula": "",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "value": 2.9e-06,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "value": 0.03132,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VAC_DELAY_MISSING",
+          "scope": "55_VAC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "55_VDC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "value": 0,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "value": 0.0,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VDC_DELAY_MISSING",
+          "scope": "55_VDC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: sensor, isolation, adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "60_IAC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IAC_ERROR_MISSING",
+          "scope": "60_IAC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    },
+    "60_IDC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IDC_ERROR_MISSING",
+          "scope": "60_IDC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    },
+    "60_VAC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VAC_ERROR_MISSING",
+          "scope": "60_VAC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    },
+    "60_VDC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VDC_ERROR_MISSING",
+          "scope": "60_VDC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    }
+  }
+}

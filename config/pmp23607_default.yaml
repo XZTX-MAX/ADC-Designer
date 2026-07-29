@@ -1,0 +1,175 @@
+metadata:
+  profile: PMP23607_RevE2_F29H85x_MVP
+  version: 0.2.0
+  description: PMP23607 bidirectional one-stage OBC sensing design calculator profile
+
+system:
+  phase_count: 1
+  ac_voltage_basis: single_phase
+  rated_power_w: 2500.0
+  peak_power_w: 2500.0
+  vac_min_rms_v: 180.0
+  vac_nom_rms_v: 230.0
+  vac_max_rms_v: 265.0
+  vdc_min_v: 370.0
+  vdc_nom_v: 400.0
+  vdc_max_v: 420.0
+  efficiency_min: 0.95
+  power_factor_min: 0.99
+  switching_frequency_hz: 150000.0
+  overload_factor: 1.10
+  default_range_margin: 1.20
+  bidirectional: true
+
+control:
+  iac_loop_bandwidth_hz: 3000.0
+  idc_loop_bandwidth_hz: 2000.0
+  vdc_loop_bandwidth_hz: 20.0
+  pll_bandwidth_hz: 30.0
+  line_frequency_hz: 50.0
+
+targets:
+  bandwidth_multiplier: 5.0
+  iac_phase_loss_deg: 15.0
+  idc_phase_loss_deg: 15.0
+  vdc_phase_loss_deg: 5.0
+  vac_line_phase_error_deg: 0.5
+  vac_pll_phase_loss_deg: 5.0
+
+adc:
+  resolution_bits: 12
+  reference_voltage_v: 3.0
+  sysclk_hz: 200000000.0
+  minimum_sample_window_s: 0.0
+  existing_sample_window_cycles: 20
+  acquisition:
+    target_error_lsb: 0.5
+    safety_factor: 1.5
+    simplified_source_resistance_ohm: 100.0
+    simplified_total_capacitance_f: 3.0e-11
+    exact_sample_capacitance_f: null
+    exact_switch_resistance_ohm: null
+    exact_source_resistance_ohm: null
+
+environment:
+  temperature_min_c: -40.0
+  temperature_max_c: 125.0
+  temperature_span_c: 165.0
+
+channels:
+  iac:
+    range_margin: 1.20
+    accuracy_target_percent_fs: 0.5
+    adc_headroom_low_v: 0.20
+    adc_headroom_high_v: 0.20
+    hall:
+      sensor_zero_output_v: 2.5
+      sensor_sensitivity_v_per_a: 0.025
+      front_end_gain: 0.584268
+      sensor_bandwidth_hz: 1100000.0
+    filter:
+      resistor_ohm: 100.0
+      capacitor_f: 1.0e-8
+    delay:
+      sensor_s: 5.0e-8
+      isolation_s: 0.0
+      adc_s: null
+      isr_s: null
+      pwm_s: null
+    error_sources: []
+
+  idc:
+    range_margin: 1.20
+    accuracy_target_percent_fs: 0.5
+    adc_headroom_low_v: 0.20
+    adc_headroom_high_v: 0.20
+    shunt:
+      resistance_ohm: 0.001
+    amplifier:
+      input_clip_v: 0.064
+      reference_voltage_v: 3.3
+      input_range_utilization: 0.80
+      input_offset_v: null
+      bandwidth_hz: 295000.0
+    filter:
+      resistor_ohm: 499.0
+      capacitor_f: 4.7e-8
+    delay:
+      sensor_s: 0.0
+      isolation_s: null
+      adc_s: null
+      isr_s: null
+      pwm_s: null
+    error_sources: []
+
+  vac:
+    range_margin: 1.15
+    accuracy_target_percent_fs: 0.5
+    divider:
+      high_side_total_ohm: 990000.0
+      low_side_ohm: 3300.0
+    isolation:
+      gain_v_per_v: 1.0
+      reference_voltage_v: 1.65
+      linear_input_abs_max_v: 1.0
+      input_range_utilization: 0.90
+      bandwidth_hz: 145000.0
+    filter:
+      resistor_ohm: 100.0
+      capacitor_f: 4.7e-9
+    delay:
+      sensor_s: 0.0
+      isolation_s: 2.9e-6
+      adc_s: null
+      isr_s: null
+      pwm_s: null
+    error_sources: []
+
+  vdc:
+    range_margin: 1.15
+    accuracy_target_percent_fs: 0.5
+    architecture: direct_hv
+    direct_hv:
+      high_voltage_clip_v: 1281.0
+      reference_voltage_v: 3.3
+      bandwidth_hz: null
+    filter:
+      resistor_ohm: 499.0
+      capacitor_f: 4.7e-8
+    delay:
+      sensor_s: null
+      isolation_s: null
+      adc_s: null
+      isr_s: null
+      pwm_s: null
+    error_sources: []
+
+assumptions:
+  - topic: System power
+    value: 2.5 kW
+    source_type: project context
+    qualification: Confirm continuous and overload power for the actual test article.
+  - topic: AC input range
+    value: 180–265 Vrms
+    source_type: PMP23607 Rev. E2 schematic
+    qualification: Observed hardware range.
+  - topic: DC operating range
+    value: 370–420 V
+    source_type: legacy software macros
+    qualification: Provisional; confirm PMP23607 battery/output specification.
+  - topic: Control bandwidths
+    value: IAC 3 kHz; IDC 2 kHz; VDC 20 Hz; PLL 30 Hz
+    source_type: engineering default
+    qualification: Provisional; replace with measured plant/controller targets.
+  - topic: Phase budgets
+    value: IAC/IDC 15 deg; VDC/VAC PLL 5 deg; line VAC 0.5 deg
+    source_type: engineering default
+    qualification: User-confirmed MVP defaults.
+  - topic: F29H85x internal ADC model
+    value: Not populated
+    source_type: missing authoritative parameter
+    qualification: Exact acquisition model remains NOT_EVALUATED until data-sheet/model values are entered.
+  - topic: Component error budgets
+    value: Empty by default
+    source_type: fail-closed design rule
+    qualification: Enter exact maximum errors and drift before design release.
