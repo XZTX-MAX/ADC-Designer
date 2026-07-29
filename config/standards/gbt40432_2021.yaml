@@ -1,0 +1,96 @@
+standard_profile:
+  enabled: true
+  name: GB/T 40432-2021
+  source_document: GBT+40432-2021.pdf
+  scope:
+    max_dc_output_v: 1500.0
+
+  ac_input:
+    single_phase_nominal_v: 220.0
+    three_phase_line_nominal_v: 380.0
+    voltage_tolerance_percent: 15.0
+    nominal_frequency_hz: 50.0
+    frequency_tolerance_hz: 1.0
+    three_phase_phase_deviation_deg: 3.0
+
+  current:
+    startup_inrush_peak_ratio_max: 1.20
+
+  dc_output:
+    voltage_error_percent_max: 1.0
+    current_error_threshold_a: 10.0
+    current_error_above_threshold_percent: 5.0
+    current_error_at_or_below_threshold_a: 0.5
+    voltage_ripple_factor_percent_max: 5.0
+    startup_voltage_overshoot_percent_max: 10.0
+    startup_current_overshoot_percent_max: 5.0
+
+  power_quality:
+    pf_rated_min: 0.98
+    pf_half_load_min: 0.95
+    efficiency_class: E1
+    average_efficiency_min: 0.94
+    efficiency_voltage_points: 10
+    efficiency_warmup_min: 30
+
+  design_allocation:
+    sensing_error_budget_fraction: 0.50
+
+  test_equipment:
+    ripple_scope_bandwidth_hz: 20000000.0
+    ripple_scope_timebase_min_s_per_div: 0.5
+
+  environment:
+    storage_temperature_min_c: -40.0
+    operating_temperature_min_c: -20.0
+    storage_temperature_max_c: 85.0
+    operating_temperature_max_liquid_c: 65.0
+    operating_temperature_max_air_c: 55.0
+    relative_humidity_min_percent: 5.0
+    relative_humidity_max_percent: 95.0
+    altitude_max_m: 2000.0
+
+  safety:
+    udmax_v: null
+    actual_isolation_withstand_rms_v: null
+
+  emc:
+    surge_differential_v: 1000.0
+    surge_common_mode_v: 2000.0
+    eft_level: 3
+    eft_repetition_hz: 5000.0
+    radiated_immunity_min_hz: 80000000.0
+    radiated_immunity_max_hz: 2000000000.0
+    radiated_immunity_v_per_m: 75.0
+
+  voltage_dip_tests:
+    - voltage_percent: 80.0
+      duration_cycles_50hz: 250
+      duration_cycles_60hz: 300
+      functional_status: II
+    - voltage_percent: 70.0
+      duration_cycles_50hz: 25
+      duration_cycles_60hz: 30
+      functional_status: II
+    - voltage_percent: 40.0
+      duration_cycles_50hz: 10
+      duration_cycles_60hz: 12
+      functional_status: III
+    - voltage_percent: 0.0
+      duration_cycles_50hz: 250
+      duration_cycles_60hz: 300
+      functional_status: III
+
+  inverter:
+    single_phase_nominal_v: 220.0
+    three_phase_line_nominal_v: 380.0
+    voltage_accuracy_percent: 5.0
+    frequency_nominal_hz: 50.0
+    frequency_tolerance_hz: 0.5
+    load_step_voltage_deviation_percent: 15.0
+    recovery_time_max_ms: 20.0
+    voltage_thd_resistive_percent: 5.0
+    voltage_thd_non_resistive_percent: 8.0
+    grid_current_dc_component_percent: 0.5
+    grid_current_dc_component_min_a: 0.005
+    efficiency_min: 0.92

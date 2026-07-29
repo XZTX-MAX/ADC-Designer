@@ -1,0 +1,2717 @@
+{
+  "profile": "PMP23607_RevE2_F29H85x_MVP",
+  "sections": {
+    "02_GBT_Compliance": {
+      "status": "WARNING",
+      "metrics": {
+        "standard_name": {
+          "label": "Enabled standard profile",
+          "value": "GB/T 40432-2021",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "standard_scope_phase": {
+          "label": "Applicable phase configuration",
+          "value": 1,
+          "unit": "phase",
+          "formula": "",
+          "inputs": "",
+          "source": "configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "standard_ac_basis": {
+          "label": "Standard AC test voltage basis",
+          "value": "single-phase RMS",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated from GB/T 40432—2021 §4.2.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "standard_max_dc_output_v": {
+          "label": "Standard scope maximum DC output",
+          "value": 1500.0,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §1",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_vdc_max_v": {
+          "label": "Configured maximum DC voltage",
+          "value": 420.0,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "system configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "standard_ac_nominal_v": {
+          "label": "Standard AC nominal test voltage",
+          "value": 220.0,
+          "unit": "V RMS",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 1",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_ac_nominal_v": {
+          "label": "Configured product nominal AC voltage",
+          "value": 230.0,
+          "unit": "V RMS",
+          "formula": "",
+          "inputs": "",
+          "source": "system configuration",
+          "status": "WARNING",
+          "note": ""
+        },
+        "nominal_voltage_difference_percent": {
+          "label": "Product/standard nominal-voltage difference",
+          "value": 4.545454545454546,
+          "unit": "%",
+          "formula": "abs(Vproduct-Vstd)/Vstd*100",
+          "inputs": "",
+          "source": "GB/T 40432—2021",
+          "status": "WARNING",
+          "note": ""
+        },
+        "gbt_ac_test_min_v": {
+          "label": "GB/T AC lower test voltage",
+          "value": 187.0,
+          "unit": "V RMS",
+          "formula": "Vnom*(1-15%)",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.1.2/§5.3.2.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_ac_test_max_v": {
+          "label": "GB/T AC upper test voltage",
+          "value": 252.99999999999997,
+          "unit": "V RMS",
+          "formula": "Vnom*(1+15%)",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.1.2/§5.3.2.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "hardware_ac_min_v": {
+          "label": "Configured hardware minimum AC voltage",
+          "value": 180.0,
+          "unit": "V RMS",
+          "formula": "",
+          "inputs": "",
+          "source": "system configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "hardware_ac_max_v": {
+          "label": "Configured hardware maximum AC voltage",
+          "value": 265.0,
+          "unit": "V RMS",
+          "formula": "",
+          "inputs": "",
+          "source": "system configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_frequency_nominal_hz": {
+          "label": "GB/T nominal frequency",
+          "value": 50.0,
+          "unit": "Hz",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 1",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_frequency_min_hz": {
+          "label": "GB/T lower frequency test",
+          "value": 49.0,
+          "unit": "Hz",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.1.3/§5.3.2.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_frequency_max_hz": {
+          "label": "GB/T upper frequency test",
+          "value": 51.0,
+          "unit": "Hz",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.1.3/§5.3.2.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_line_frequency_hz": {
+          "label": "Configured line frequency",
+          "value": 50.0,
+          "unit": "Hz",
+          "formula": "",
+          "inputs": "",
+          "source": "control configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_startup_inrush_ratio": {
+          "label": "Maximum startup input-current peak ratio",
+          "value": 1.2,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_required_iac_linear_peak_a": {
+          "label": "Minimum IAC linear range for GB/T startup test",
+          "value": 25.061378032484406,
+          "unit": "A peak",
+          "formula": "Isteady_peak*1.20",
+          "inputs": "",
+          "source": "GB/T 40432—2021",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_iac_design_peak_a": {
+          "label": "Configured IAC design peak",
+          "value": 27.56751583573285,
+          "unit": "A peak",
+          "formula": "",
+          "inputs": "",
+          "source": "system-rating calculation",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_output_voltage_error_percent": {
+          "label": "Whole-product DC output-voltage error limit",
+          "value": 1.0,
+          "unit": "%",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.6",
+          "status": "PASS",
+          "note": ""
+        },
+        "allocated_vdc_sensing_error_percent": {
+          "label": "Allocated VDC sensing-chain error",
+          "value": 0.5,
+          "unit": "%FS",
+          "formula": "GBT limit*allocation fraction",
+          "inputs": "",
+          "source": "GB/T 40432—2021",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_vdc_sensing_target_percent": {
+          "label": "Configured VDC sensing target",
+          "value": 0.5,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "channel configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_output_current_threshold_a": {
+          "label": "Output-current error threshold",
+          "value": 10.0,
+          "unit": "A",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.7",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_output_current_error_above_threshold_percent": {
+          "label": "Whole-product current-error limit above threshold",
+          "value": 5.0,
+          "unit": "%",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.7",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_output_current_error_below_threshold_a": {
+          "label": "Whole-product current deviation at/below threshold",
+          "value": 0.5,
+          "unit": "A",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.7",
+          "status": "PASS",
+          "note": ""
+        },
+        "allocated_idc_sensing_error_percent": {
+          "label": "Allocated IDC sensing error above 10 A",
+          "value": 2.5,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_idc_sensing_target_percent": {
+          "label": "Configured IDC sensing target",
+          "value": 0.5,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "channel configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_idc_sensing_target_absolute_a": {
+          "label": "Configured IDC target converted to design-full-scale amperes",
+          "value": 0.0469416785206259,
+          "unit": "A",
+          "formula": "IDC_design*target_%FS/100",
+          "inputs": "",
+          "source": "GB/T 40432—2021",
+          "status": "PASS",
+          "note": "Conservative screening; %FS and low-current absolute error are not identical definitions."
+        },
+        "allocated_idc_low_current_error_a": {
+          "label": "Allocated IDC low-current absolute error",
+          "value": 0.25,
+          "unit": "A",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_voltage_ripple_factor_percent": {
+          "label": "Whole-product DC voltage-ripple factor limit",
+          "value": 5.0,
+          "unit": "%",
+          "formula": "Vpp/(2*Vdc)*100",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.8/§5.3.9",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_voltage_ripple_vpp_ratio": {
+          "label": "Equivalent maximum ripple peak-to-peak ratio",
+          "value": 10.0,
+          "unit": "% of Vdc",
+          "formula": "Vpp/Vdc=2*Vripple_factor",
+          "inputs": "",
+          "source": "derived from GB/T 40432—2021 §4.2.8",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_vdc_startup_range_factor": {
+          "label": "Minimum VDC range factor from startup overvoltage",
+          "value": 1.1,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.9.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_vdc_range_margin": {
+          "label": "Configured VDC range margin",
+          "value": 1.15,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "channel configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_idc_startup_range_factor": {
+          "label": "Minimum IDC range factor from startup overcurrent",
+          "value": 1.05,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.9.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_idc_range_margin": {
+          "label": "Configured IDC range margin",
+          "value": 1.2,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "channel configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_pf_rated_min": {
+          "label": "Minimum PF at rated output",
+          "value": 0.98,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 2",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_pf_half_load_min": {
+          "label": "Minimum PF at 50% output",
+          "value": 0.95,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 2",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_pf_design": {
+          "label": "Configured design PF",
+          "value": 0.99,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "system configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "estimated_rated_input_current_a": {
+          "label": "Estimated rated per-line input current for standard branch",
+          "value": 12.082547967715431,
+          "unit": "A RMS",
+          "formula": "Prated/(Vnom*eta*PF), with phase factor",
+          "inputs": "",
+          "source": "calculated for GB/T 40432—2021 §4.5.3.5/§4.5.3.6",
+          "status": "PASS",
+          "note": ""
+        },
+        "harmonic_current_standard": {
+          "label": "Applicable harmonic-current standard",
+          "value": "GB 17625.1",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.5.3.5",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_fluctuation_standard": {
+          "label": "Applicable voltage-fluctuation/flicker standard",
+          "value": "GB/T 17625.2",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.5.3.6",
+          "status": "PASS",
+          "note": ""
+        },
+        "gbt_average_efficiency_min": {
+          "label": "E1 average charging-efficiency threshold",
+          "value": 0.94,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 3",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_worst_case_efficiency": {
+          "label": "Configured minimum efficiency used for current sizing",
+          "value": 0.95,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "system configuration",
+          "status": "PASS",
+          "note": "This is a sizing assumption, not the ten-point average-efficiency test result."
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "GBT_NOMINAL_VOLTAGE",
+          "scope": "02_GBT_Compliance",
+          "status": "WARNING",
+          "message": "Product nominal voltage 230.0 V differs from the GB/T test nominal 220.0 V.",
+          "recommendation": "Keep the hardware rating, but use the separate GB/T nominal voltage for compliance testing."
+        },
+        {
+          "code": "GBT_EFFICIENCY_EVIDENCE",
+          "scope": "02_GBT_Compliance",
+          "status": "WARNING",
+          "message": "The configured minimum efficiency is not proof of the GB/T ten-point average-efficiency result.",
+          "recommendation": "Validate after 30 min warm-up at ten evenly spaced output-voltage points."
+        }
+      ]
+    },
+    "03_GBT_Test_Matrix": {
+      "status": "PASS",
+      "metrics": {
+        "ac_voltage_low_test": {
+          "label": "AC lower-voltage operating test",
+          "value": "187.000 V RMS, >=60 s",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.2.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "ac_voltage_high_test": {
+          "label": "AC upper-voltage operating test",
+          "value": "253.000 V RMS, >=60 s",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.2.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "frequency_low_test": {
+          "label": "Lower-frequency operating test",
+          "value": "49.0 Hz, 60 s",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.2.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "frequency_high_test": {
+          "label": "Upper-frequency operating test",
+          "value": "51.0 Hz, 60 s",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.2.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "startup_inrush_test": {
+          "label": "Startup input-current test",
+          "value": "3 starts; >=2 min interval; compare startup/stable peaks",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.3",
+          "status": "PASS",
+          "note": "Microsecond EMI inrush is excluded by the standard."
+        },
+        "voltage_error_load_points": {
+          "label": "DC voltage-error load points",
+          "value": "10%, 50%, 100% rated load",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.7",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_error_voltage_points": {
+          "label": "DC current-error voltage points",
+          "value": "output-voltage lower limit, rated value, upper limit",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.8",
+          "status": "PASS",
+          "note": ""
+        },
+        "ripple_load_points": {
+          "label": "DC voltage-ripple load points",
+          "value": "50%, 100% rated output current",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.9",
+          "status": "PASS",
+          "note": ""
+        },
+        "ripple_scope_setting": {
+          "label": "External ripple-test oscilloscope",
+          "value": "AC coupling; 20 MHz bandwidth; >=0.5 s/div",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.9",
+          "status": "PASS",
+          "note": "This is not the MCU ADC bandwidth requirement."
+        },
+        "efficiency_warmup": {
+          "label": "Efficiency-test warm-up",
+          "value": "30 min at rated state",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.13",
+          "status": "PASS",
+          "note": ""
+        },
+        "efficiency_voltage_points": {
+          "label": "Efficiency-test output-voltage points",
+          "value": "10 evenly spaced values across product output range",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.13",
+          "status": "PASS",
+          "note": ""
+        },
+        "ac_protection_thresholds": {
+          "label": "AC over/undervoltage protection thresholds",
+          "value": "product technical document-defined",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.3.1/§5.4.1",
+          "status": "PASS",
+          "note": "The national standard does not provide one universal threshold value."
+        },
+        "dc_protection_thresholds": {
+          "label": "DC over/undervoltage protection thresholds",
+          "value": "product technical document-defined",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.3.3/§5.4.3",
+          "status": "PASS",
+          "note": "Do not replace product protection calibration with the ±15% normal-input test range."
+        },
+        "voltage_dip_1": {
+          "label": "Voltage dip/interruption: 80%",
+          "value": "250 cycles / 5 s at 50 Hz; state II",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 7",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_dip_2": {
+          "label": "Voltage dip/interruption: 70%",
+          "value": "25 cycles / 0.5 s at 50 Hz; state II",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 7",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_dip_3": {
+          "label": "Voltage dip/interruption: 40%",
+          "value": "10 cycles / 0.2 s at 50 Hz; state III",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 7",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_dip_4": {
+          "label": "Voltage dip/interruption: 0%",
+          "value": "250 cycles / 5 s at 50 Hz; state III",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 7",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "04_GBT_Allocation": {
+      "status": "PASS",
+      "metrics": {
+        "vac_nominal_handling": {
+          "label": "AC nominal-voltage parameter",
+          "value": "Add compliance test nominal; do not overwrite hardware/product rating",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "engineering allocation from GB/T 40432—2021",
+          "status": "PASS",
+          "note": "GB/T nominal=220.000 V RMS; test range=187.000–253.000 V RMS."
+        },
+        "vac_range_handling": {
+          "label": "AC min/max voltage parameters",
+          "value": "Keep wider hardware range; add separate GB/T test range",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "engineering allocation",
+          "status": "PASS",
+          "note": ""
+        },
+        "pf_handling": {
+          "label": "Power-factor parameter",
+          "value": "Keep product target; add 0.98 rated and 0.95 half-load compliance limits",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 2",
+          "status": "PASS",
+          "note": ""
+        },
+        "efficiency_handling": {
+          "label": "Efficiency parameter",
+          "value": "Keep worst-case sizing efficiency; add E1 average-efficiency threshold 0.94",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 3",
+          "status": "PASS",
+          "note": ""
+        },
+        "vdc_accuracy_handling": {
+          "label": "VDC accuracy target",
+          "value": "Keep sensing-chain target <=0.5%FS; standard whole-product limit is ±1%",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.6",
+          "status": "PASS",
+          "note": ""
+        },
+        "idc_accuracy_handling": {
+          "label": "IDC accuracy target",
+          "value": "Keep sensing-chain target <=0.5%FS; add whole-product piecewise 5% / 0.5 A limits",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.7",
+          "status": "PASS",
+          "note": ""
+        },
+        "ripple_handling": {
+          "label": "VDC ripple parameter",
+          "value": "Add 5% whole-product ripple test; do not replace ADC/RC bandwidth",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.8/§5.3.9",
+          "status": "PASS",
+          "note": ""
+        },
+        "scope_bandwidth_handling": {
+          "label": "20 MHz oscilloscope bandwidth",
+          "value": "External test-equipment setting only; do not map to F29H85x ADC bandwidth",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.3.9",
+          "status": "PASS",
+          "note": ""
+        },
+        "inrush_handling": {
+          "label": "Startup current ratio",
+          "value": "Use 1.20 pu as a compliance range floor; retain larger overload/fault margin",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "phase_deviation_handling": {
+          "label": "Three-phase ±3° requirement",
+          "value": "Add as grid test case; do not replace ADC inter-channel skew target",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.2.1.4",
+          "status": "PASS",
+          "note": ""
+        },
+        "temperature_handling": {
+          "label": "Temperature parameters",
+          "value": "Separate vehicle ambient/storage tests from component -40…125 °C error-budget range",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 8",
+          "status": "PASS",
+          "note": ""
+        },
+        "emc_handling": {
+          "label": "Surge/ESD/EFT requirements",
+          "value": "Add transient withstand requirements; do not enlarge linear sensing range to kV values",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.5.2",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "07_GBT_Test_Equipment": {
+      "status": "PASS",
+      "metrics": {
+        "sensor_validation_error_level_percent": {
+          "label": "Smallest configured sensing-error target",
+          "value": 0.5,
+          "unit": "%",
+          "formula": "",
+          "inputs": "",
+          "source": "channel configurations",
+          "status": "PASS",
+          "note": ""
+        },
+        "sensor_validation_instrument_class": {
+          "label": "Reference instrument for <=0.5% sensing validation",
+          "value": "0.1 class",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 9",
+          "status": "PASS",
+          "note": "Recommended digital resolution: 6.5 digit."
+        },
+        "voltage_error_test_instrument_class": {
+          "label": "Instrument for 1% output-voltage error test",
+          "value": "0.2 class",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 9",
+          "status": "PASS",
+          "note": "Digital resolution: 5.5 digit."
+        },
+        "current_error_test_instrument_class": {
+          "label": "Instrument for 5% output-current error test",
+          "value": "0.5 class",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 9",
+          "status": "PASS",
+          "note": "Digital resolution: 4.5 digit."
+        },
+        "temperature_instrument_error_c": {
+          "label": "Temperature-measurement instrument error",
+          "value": 1.0,
+          "unit": "±°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "time_instrument_relative_error_percent": {
+          "label": "Time-measurement relative error",
+          "value": 1.0,
+          "unit": "%",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "chamber_temperature_control_error_c": {
+          "label": "Environmental-chamber temperature control",
+          "value": 2.0,
+          "unit": "±°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "chamber_humidity_control_error_percent": {
+          "label": "Environmental-chamber humidity control",
+          "value": 3.0,
+          "unit": "±%RH",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "test_ambient_temperature_c": {
+          "label": "General test ambient temperature",
+          "value": "18–28",
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "test_relative_humidity_percent": {
+          "label": "General test relative humidity",
+          "value": "25–75",
+          "unit": "%RH",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "test_pressure_kpa": {
+          "label": "General test atmospheric pressure",
+          "value": "86–106",
+          "unit": "kPa",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "liquid_coolant_inlet_temperature_c": {
+          "label": "Liquid-cooled test inlet temperature",
+          "value": "40±2",
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §5.1.1",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "08_GBT_Safety_EMC": {
+      "status": "WARNING",
+      "metrics": {
+        "storage_temperature_min_c": {
+          "label": "Low storage ambient",
+          "value": -40.0,
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 8",
+          "status": "PASS",
+          "note": ""
+        },
+        "operating_temperature_min_c": {
+          "label": "Low operating ambient",
+          "value": -20.0,
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 8",
+          "status": "PASS",
+          "note": ""
+        },
+        "storage_temperature_max_c": {
+          "label": "High storage ambient",
+          "value": 85.0,
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 8",
+          "status": "PASS",
+          "note": ""
+        },
+        "operating_temperature_max_liquid_c": {
+          "label": "High operating ambient — liquid cooled",
+          "value": 65.0,
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 8",
+          "status": "PASS",
+          "note": ""
+        },
+        "operating_temperature_max_air_c": {
+          "label": "High operating ambient — air cooled",
+          "value": 55.0,
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 8",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_component_temperature_min_c": {
+          "label": "Configured component error-budget minimum",
+          "value": -40.0,
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "environment configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_component_temperature_max_c": {
+          "label": "Configured component error-budget maximum",
+          "value": 125.0,
+          "unit": "°C",
+          "formula": "",
+          "inputs": "",
+          "source": "environment configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "relative_humidity_range_percent": {
+          "label": "Relative-humidity range",
+          "value": "5–95",
+          "unit": "%RH",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.6.1.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "altitude_max_m": {
+          "label": "Default maximum altitude",
+          "value": 2000,
+          "unit": "m",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.6.1.3",
+          "status": "PASS",
+          "note": ""
+        },
+        "insulation_resistance_min_ohm": {
+          "label": "Minimum insulation resistance",
+          "value": 10000000.0,
+          "unit": "ohm",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.4.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "dielectric_udmax_v": {
+          "label": "Highest working voltage used for dielectric test",
+          "value": 420.0,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "standard_profile.safety.udmax_v or system.vdc_max_v",
+          "status": "PASS",
+          "note": ""
+        },
+        "dielectric_test_voltage_rms_v": {
+          "label": "Required dielectric test voltage",
+          "value": 2000.0,
+          "unit": "V RMS",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 4",
+          "status": "PASS",
+          "note": ""
+        },
+        "dielectric_test_voltage_dc_equiv_v": {
+          "label": "Equivalent DC dielectric test voltage",
+          "value": 2800.0,
+          "unit": "V DC",
+          "formula": "1.4*Vac_rms",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 4 Note 2",
+          "status": "PASS",
+          "note": ""
+        },
+        "dielectric_test_duration_s": {
+          "label": "Dielectric test duration",
+          "value": 60,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.4.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "contact_current_max_ma": {
+          "label": "Maximum contact current",
+          "value": 3.5,
+          "unit": "mA",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.4.3",
+          "status": "PASS",
+          "note": ""
+        },
+        "actual_isolation_withstand_rms_v": {
+          "label": "Configured isolation-component/system withstand",
+          "value": null,
+          "unit": "V RMS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing component/system input",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "surge_differential_v": {
+          "label": "AC-port differential-mode surge",
+          "value": 1000,
+          "unit": "±V",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 6",
+          "status": "PASS",
+          "note": ""
+        },
+        "surge_common_mode_v": {
+          "label": "AC-port common-mode surge",
+          "value": 2000,
+          "unit": "±V",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 6",
+          "status": "PASS",
+          "note": ""
+        },
+        "eft_level": {
+          "label": "EFT severity level",
+          "value": "Level 3, 5 kHz repetition",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.5.2.3",
+          "status": "PASS",
+          "note": ""
+        },
+        "radiated_immunity": {
+          "label": "Radiated immunity",
+          "value": "75 V/m, 80 MHz–2 GHz",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §4.5.2.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "esd_powered": {
+          "label": "Powered ESD",
+          "value": "±8 kV contact; ±15 kV air; ±20 kV indirect contact",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 5",
+          "status": "PASS",
+          "note": ""
+        },
+        "esd_unpowered": {
+          "label": "Unpowered ESD",
+          "value": "±8 kV contact; ±15 kV air",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table 5",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "GBT_ISOLATION_NOT_CHECKED",
+          "scope": "08_GBT_Safety_EMC",
+          "status": "NOT_EVALUATED",
+          "message": "No actual isolation withstand rating is configured, so dielectric compliance cannot be verified.",
+          "recommendation": "Enter standard_profile.safety.actual_isolation_withstand_rms_v after selecting the isolation architecture."
+        },
+        {
+          "code": "GBT_EMC_COMPONENT_CHECK",
+          "scope": "08_GBT_Safety_EMC",
+          "status": "NOT_EVALUATED",
+          "message": "The standard EMC values are system-level tests; current component pulse/CMTI/ESD ratings are not available in the calculation profile.",
+          "recommendation": "Use these requirements in the future MCP component-selection layer and verify at system level."
+        }
+      ]
+    },
+    "09_GBT_Inverter": {
+      "status": "WARNING",
+      "metrics": {
+        "inverter_output_nominal_v": {
+          "label": "Inverter AC output nominal",
+          "value": 220.0,
+          "unit": "V RMS",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 Table A.1",
+          "status": "PASS",
+          "note": ""
+        },
+        "inverter_voltage_accuracy_percent": {
+          "label": "Inverter AC voltage accuracy",
+          "value": 5.0,
+          "unit": "±%",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.2",
+          "status": "PASS",
+          "note": ""
+        },
+        "inverter_frequency_nominal_hz": {
+          "label": "Inverter nominal frequency",
+          "value": 50.0,
+          "unit": "Hz",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.3",
+          "status": "PASS",
+          "note": ""
+        },
+        "inverter_frequency_tolerance_hz": {
+          "label": "Inverter frequency tolerance",
+          "value": 0.5,
+          "unit": "±Hz",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.3",
+          "status": "PASS",
+          "note": ""
+        },
+        "load_step_voltage_deviation_percent": {
+          "label": "Load-step AC-voltage peak deviation",
+          "value": 15.0,
+          "unit": "±%",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.4",
+          "status": "PASS",
+          "note": ""
+        },
+        "load_step_recovery_time_ms": {
+          "label": "Load-step recovery time",
+          "value": 20.0,
+          "unit": "ms",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.4",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_thd_resistive_percent": {
+          "label": "Voltage THD with resistive load",
+          "value": 5.0,
+          "unit": "%",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.5",
+          "status": "PASS",
+          "note": ""
+        },
+        "voltage_thd_non_resistive_percent": {
+          "label": "Voltage THD with non-resistive load",
+          "value": 8.0,
+          "unit": "%",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.9",
+          "status": "PASS",
+          "note": ""
+        },
+        "grid_current_dc_component_limit_a": {
+          "label": "Grid-current DC-component limit",
+          "value": 0.07383779313603875,
+          "unit": "A",
+          "formula": "max(0.5%*Irated,5mA)",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.6",
+          "status": "PASS",
+          "note": ""
+        },
+        "inverter_efficiency_min": {
+          "label": "Minimum inverter efficiency",
+          "value": 0.92,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.7",
+          "status": "PASS",
+          "note": ""
+        },
+        "no_load_loss_limit_w": {
+          "label": "No-load loss limit",
+          "value": 75.0,
+          "unit": "W",
+          "formula": "max(3%*Prated,50W)",
+          "inputs": "",
+          "source": "GB/T 40432—2021 §A.1.1.8",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "GBT_INVERTER_EVIDENCE",
+          "scope": "09_GBT_Inverter",
+          "status": "NOT_EVALUATED",
+          "message": "The calculator now exposes reverse-power compliance requirements but does not simulate THD, dynamic recovery or grid-current DC injection.",
+          "recommendation": "Use the requirements as controller/sensing budgets and verify with the Appendix A test procedures."
+        }
+      ]
+    },
+    "10_System_Rating": {
+      "status": "PASS",
+      "metrics": {
+        "phase_count": {
+          "label": "AC phase count",
+          "value": 1,
+          "unit": "phase",
+          "formula": "",
+          "inputs": "",
+          "source": "configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "ac_voltage_basis": {
+          "label": "AC voltage basis",
+          "value": "single_phase",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "phase_unbalance_factor": {
+          "label": "Phase unbalance design factor",
+          "value": 1.0,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "configuration",
+          "status": "PASS",
+          "note": ""
+        },
+        "iac_rms_max_a": {
+          "label": "Maximum per-line/per-phase AC RMS current",
+          "value": 14.76755862720775,
+          "unit": "A",
+          "formula": "Ppeak/(Vac_min*eta*PF)",
+          "inputs": "peak_power=2500.0, vac_min=180.0, efficiency=0.95, pf=0.99, unbalance=1.0",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "iac_peak_a": {
+          "label": "Maximum per-phase AC peak current",
+          "value": 20.884481693737005,
+          "unit": "A",
+          "formula": "sqrt(2)*Iac_rms",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "iac_design_peak_a": {
+          "label": "Bidirectional per-phase IAC design peak",
+          "value": 27.56751583573285,
+          "unit": "A",
+          "formula": "Iac_peak*Koverload*Kmargin",
+          "inputs": "overload=1.1, iac_margin=1.2",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "idc_continuous_max_a": {
+          "label": "Maximum DC continuous current",
+          "value": 7.112375533428165,
+          "unit": "A",
+          "formula": "Ppeak/(Vdc_min*eta)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "idc_design_peak_a": {
+          "label": "Bidirectional IDC design peak",
+          "value": 9.38833570412518,
+          "unit": "A",
+          "formula": "Idc_cont*Koverload*Kmargin",
+          "inputs": "overload=1.1, idc_margin=1.2",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "15_Phase_Channels": {
+      "status": "PASS",
+      "metrics": {
+        "phase_mode": {
+          "label": "Phase-channel model",
+          "value": "single_phase",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "20_IAC_Hall": {
+      "status": "WARNING",
+      "metrics": {
+        "design_current_a": {
+          "label": "Required bidirectional peak current",
+          "value": 27.56751583573285,
+          "unit": "A",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_sensitivity_v_per_a": {
+          "label": "Effective ADC sensitivity",
+          "value": 0.0146067,
+          "unit": "V/A",
+          "formula": "Sensor sensitivity*front-end gain",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_sensitivity_v_per_a": {
+          "label": "Maximum permissible ADC sensitivity",
+          "value": 0.04573027208951222,
+          "unit": "V/A",
+          "formula": "min((Vzero-Vmin)/Imax,(Vmax-Vzero)/Imax)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_front_end_gain": {
+          "label": "Maximum permissible front-end gain",
+          "value": 1.8292108835804888,
+          "unit": "V/V",
+          "formula": "Seff_max/Ssensor",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_v": {
+          "label": "ADC zero-current voltage",
+          "value": 1.46067,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_code": {
+          "label": "ADC zero-current code",
+          "value": 1994.30144,
+          "unit": "code",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_v": {
+          "label": "ADC voltage at negative design current",
+          "value": 1.0579995664422008,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_v": {
+          "label": "ADC voltage at positive design current",
+          "value": 1.863340433557799,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_code": {
+          "label": "ADC code at negative design current",
+          "value": 1444.5220747157516,
+          "unit": "code",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_code": {
+          "label": "ADC code at positive design current",
+          "value": 2544.080805284248,
+          "unit": "code",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_per_code_a": {
+          "label": "Current resolution",
+          "value": 0.050142871079709994,
+          "unit": "A/code",
+          "formula": "Vlsb/Seff",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_utilization": {
+          "label": "ADC span utilization",
+          "value": 0.2684469557051994,
+          "unit": "pu",
+          "formula": "(Vmax-Vmin)/Vref",
+          "inputs": "",
+          "source": "calculated",
+          "status": "WARNING",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IAC_UTIL",
+          "scope": "20_IAC_Hall",
+          "status": "WARNING",
+          "message": "Only 26.8% of ADC full scale is used at the PMP23607 design current.",
+          "recommendation": "This is acceptable for overload headroom but degrades light-load effective resolution; verify zero-offset and noise performance."
+        }
+      ]
+    },
+    "40_VAC": {
+      "status": "FAIL",
+      "metrics": {
+        "vac_design_peak_v": {
+          "label": "VAC design peak including margin",
+          "value": 430.9815831332007,
+          "unit": "V",
+          "formula": "Vac_rms_max*sqrt(2)*Kmargin",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "divider_ratio": {
+          "label": "Configured divider ratio",
+          "value": 0.0033222591362126247,
+          "unit": "V/V",
+          "formula": "Rbottom/(Rtop+Rbottom)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_input_peak_v": {
+          "label": "Isolation amplifier input peak",
+          "value": 1.4318325021036566,
+          "unit": "V",
+          "formula": "Vdesign*Kdivider",
+          "inputs": "",
+          "source": "calculated",
+          "status": "FAIL",
+          "note": ""
+        },
+        "isolation_linear_limit_v": {
+          "label": "Isolation amplifier linear input limit",
+          "value": 1.0,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "recommended_high_side_ohm": {
+          "label": "Required high-side resistance",
+          "value": 1576965.8048217357,
+          "unit": "ohm",
+          "formula": "Rbottom*(Vdesign/Vtarget-1)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "FAIL",
+          "note": ""
+        },
+        "adc_output_min_v": {
+          "label": "ADC minimum voltage",
+          "value": 0.21816749789634327,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "FAIL",
+          "note": ""
+        },
+        "adc_output_max_v": {
+          "label": "ADC maximum voltage",
+          "value": 3.081832502103657,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "FAIL",
+          "note": ""
+        },
+        "vac_per_code_v": {
+          "label": "VAC resolution",
+          "value": 0.220458984375,
+          "unit": "V/code",
+          "formula": "Vlsb/(Kdivider*Gain)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VAC_LINEAR_RANGE",
+          "scope": "40_VAC",
+          "status": "FAIL",
+          "message": "VAC divider drives the isolation input to 1.432 V, beyond the ±1.000 V linear range.",
+          "recommendation": "Increase high-side resistance/reduce divider ratio. Hardware redesign is required; software calibration cannot restore clipped data."
+        },
+        {
+          "code": "VAC_ADC_RANGE",
+          "scope": "40_VAC",
+          "status": "FAIL",
+          "message": "VAC isolation output exceeds ADC range.",
+          "recommendation": "Adjust divider ratio, reference voltage or output gain."
+        }
+      ]
+    },
+    "21_IAC_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "label": "RC cutoff frequency",
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "label": "Effective analog bandwidth",
+          "value": 159154.94309189534,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "label": "Minimum required bandwidth",
+          "value": 15000.0,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "label": "Magnitude at loop crossover",
+          "value": 0.9998223944475859,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "label": "Analog phase loss at crossover",
+          "value": 1.0798721171883547,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "label": "Attenuation at switching frequency",
+          "value": -2.7606280443612286,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "21_IAC_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -2.8 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "42_VAC_Filter": {
+      "status": "WARNING",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "label": "RC cutoff frequency",
+          "value": 338627.5384933943,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "label": "Effective analog bandwidth",
+          "value": 145000.0,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "label": "Minimum required bandwidth",
+          "value": 342.9015690828403,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "label": "Magnitude at loop crossover",
+          "value": 0.9999999785969091,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "label": "Analog phase loss at crossover",
+          "value": 0.011854299040457476,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "label": "Attenuation at switching frequency",
+          "value": -3.1600277531941905,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_SWITCH_RIPPLE",
+          "scope": "42_VAC_Filter",
+          "status": "WARNING",
+          "message": "Single-pole attenuation at switching frequency is only -3.2 dB.",
+          "recommendation": "Use PWM-synchronous sampling and/or a higher-order/digital filter; do not reduce bandwidth blindly."
+        }
+      ]
+    },
+    "30_IDC_Shunt": {
+      "status": "WARNING",
+      "metrics": {
+        "actual_shunt_ohm": {
+          "label": "Configured shunt resistance",
+          "value": 0.001,
+          "unit": "ohm",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "max_shunt_adc_ohm": {
+          "label": "Maximum shunt from ADC swing",
+          "value": 0.004751221303948576,
+          "unit": "ohm",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "max_shunt_input_ohm": {
+          "label": "Maximum shunt from amplifier input",
+          "value": 0.005453575757575757,
+          "unit": "ohm",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "recommended_shunt_max_ohm": {
+          "label": "Recommended maximum shunt",
+          "value": 0.004751221303948576,
+          "unit": "ohm",
+          "formula": "min(R_adc,R_input)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_sensitivity_v_per_a": {
+          "label": "Effective ADC sensitivity",
+          "value": 0.02578125,
+          "unit": "V/A",
+          "formula": "Rshunt*Vref/(2*Vclip)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "zero_adc_v": {
+          "label": "Zero-current ADC voltage",
+          "value": 1.65,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_min_v": {
+          "label": "ADC voltage at negative design current",
+          "value": 1.4079569701280226,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_max_v": {
+          "label": "ADC voltage at positive design current",
+          "value": 1.8920430298719773,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "current_per_code_a": {
+          "label": "Current resolution",
+          "value": 0.02840909090909091,
+          "unit": "A/code",
+          "formula": "Vlsb/Seff",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_utilization": {
+          "label": "ADC span utilization",
+          "value": 0.16136201991465157,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "continuous_shunt_power_w": {
+          "label": "Continuous shunt loss",
+          "value": 0.05058588572850757,
+          "unit": "W",
+          "formula": "Irms^2*R",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "peak_shunt_power_w": {
+          "label": "Peak shunt loss",
+          "value": 0.08814084729335163,
+          "unit": "W",
+          "formula": "Ipeak^2*R",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "equivalent_offset_current_a": {
+          "label": "Equivalent input offset current",
+          "value": null,
+          "unit": "A",
+          "formula": "Vos/Rshunt",
+          "inputs": "",
+          "source": "missing input",
+          "status": "NOT_EVALUATED",
+          "note": "Enter channels.idc.amplifier.input_offset_v."
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IDC_OFFSET_UNKNOWN",
+          "scope": "30_IDC_Shunt",
+          "status": "NOT_EVALUATED",
+          "message": "IDC amplifier input offset is not configured.",
+          "recommendation": "Enter the exact device maximum offset before design release."
+        },
+        {
+          "code": "IDC_UTIL",
+          "scope": "30_IDC_Shunt",
+          "status": "WARNING",
+          "message": "IDC uses only 16.1% of ADC full scale at calculated rated power.",
+          "recommendation": "Confirm whether the channel is intentionally sized for a higher DCDC current or fault range."
+        }
+      ]
+    },
+    "41_VDC": {
+      "status": "PASS",
+      "metrics": {
+        "vdc_design_max_v": {
+          "label": "VDC design maximum including margin",
+          "value": 482.99999999999994,
+          "unit": "V",
+          "formula": "Vdc_max*Kmargin",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "architecture": {
+          "label": "Sensing architecture",
+          "value": "direct_hv",
+          "unit": "",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "sensor_transfer_ratio": {
+          "label": "Direct-HV sensor transfer ratio",
+          "value": 0.002576112412177986,
+          "unit": "V/V",
+          "formula": "Vref/Vclip",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_voltage_at_design_max": {
+          "label": "ADC voltage at VDC design maximum",
+          "value": 1.244262295081967,
+          "unit": "V",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "maximum_measurable_vdc_v": {
+          "label": "Maximum measurable VDC before ADC full scale",
+          "value": 1164.5454545454545,
+          "unit": "V",
+          "formula": "Vadc_fs/Ksensor",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "vdc_per_code_v": {
+          "label": "VDC resolution",
+          "value": 0.28431285511363635,
+          "unit": "V/code",
+          "formula": "Vlsb/Ksensor",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_utilization": {
+          "label": "ADC utilization at VDC design maximum",
+          "value": 0.4147540983606557,
+          "unit": "pu",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "31_IDC_Filter": {
+      "status": "FAIL",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "label": "RC cutoff frequency",
+          "value": 6786.123015899687,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "label": "Effective analog bandwidth",
+          "value": 6786.123015899687,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "FAIL",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "label": "Minimum required bandwidth",
+          "value": 10000.0,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "label": "Magnitude at loop crossover",
+          "value": 0.9592091848328073,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "label": "Analog phase loss at crossover",
+          "value": 16.421251669078007,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "FAIL",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "label": "Attenuation at switching frequency",
+          "value": -26.89827037859558,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "AFE_PHASE",
+          "scope": "31_IDC_Filter",
+          "status": "FAIL",
+          "message": "Analog phase loss 16.42° exceeds 15.00°.",
+          "recommendation": "Increase analog bandwidth or lower loop crossover frequency."
+        }
+      ]
+    },
+    "43_VDC_Filter": {
+      "status": "PASS",
+      "metrics": {
+        "rc_cutoff_hz": {
+          "label": "RC cutoff frequency",
+          "value": 6786.123015899687,
+          "unit": "Hz",
+          "formula": "1/(2*pi*R*C)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "effective_bandwidth_hz": {
+          "label": "Effective analog bandwidth",
+          "value": 6786.123015899687,
+          "unit": "Hz",
+          "formula": "min(RC cutoff, sensor bandwidth)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "required_bandwidth_hz": {
+          "label": "Minimum required bandwidth",
+          "value": 228.60104605522685,
+          "unit": "Hz",
+          "formula": "max(Kbw*floop, floop/tan(phi_budget))",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_gain_ratio": {
+          "label": "Magnitude at loop crossover",
+          "value": 0.9999956570611909,
+          "unit": "pu",
+          "formula": "1/sqrt(1+(floop/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "loop_phase_loss_deg": {
+          "label": "Analog phase loss at crossover",
+          "value": 0.16886111109563232,
+          "unit": "deg",
+          "formula": "atan(floop/fc)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "switching_attenuation_db": {
+          "label": "Attenuation at switching frequency",
+          "value": -26.89827037859558,
+          "unit": "dB",
+          "formula": "-10*log10(1+(fsw/fc)^2)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        }
+      },
+      "diagnostics": []
+    },
+    "50_ADC_Timing": {
+      "status": "WARNING",
+      "metrics": {
+        "adc_lsb_v": {
+          "label": "ADC voltage LSB",
+          "value": 0.000732421875,
+          "unit": "V/code",
+          "formula": "Vref/2^N",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_sample_cycles": {
+          "label": "Configured sample window",
+          "value": 20,
+          "unit": "SYSCLK",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "configured_sample_time_s": {
+          "label": "Configured sample time",
+          "value": 1e-07,
+          "unit": "s",
+          "formula": "cycles/fsysclk",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_tau_s": {
+          "label": "Simplified RC time constant",
+          "value": 3e-09,
+          "unit": "s",
+          "formula": "Rsource*Ctotal",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_required_time_s": {
+          "label": "Simplified required acquisition time",
+          "value": 2.7032740041837863e-08,
+          "unit": "s",
+          "formula": "-tau*ln(target_lsb/2^N)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_recommended_time_s": {
+          "label": "Simplified recommended acquisition time",
+          "value": 4.0549110062756793e-08,
+          "unit": "s",
+          "formula": "treq*Ksafety",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "simplified_recommended_cycles": {
+          "label": "Simplified recommended sample window",
+          "value": 9,
+          "unit": "SYSCLK",
+          "formula": "ceil(trec*fsysclk)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "exact_recommended_cycles": {
+          "label": "Exact-model recommended sample window",
+          "value": null,
+          "unit": "SYSCLK",
+          "formula": "",
+          "inputs": "",
+          "source": "missing device parameters",
+          "status": "NOT_EVALUATED",
+          "note": "Enter F29H85x sample capacitor and switch resistance from the applicable data sheet/model."
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "ADC_EXACT_MISSING",
+          "scope": "50_ADC_Timing",
+          "status": "NOT_EVALUATED",
+          "message": "Exact ADC acquisition model is not evaluated because MCU internal parameters are not provided.",
+          "recommendation": "Populate exact_sample_capacitance_f, exact_switch_resistance_ohm and exact_source_resistance_ohm."
+        }
+      ]
+    },
+    "55_IAC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "label": "Sensor delay",
+          "value": 5e-08,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "label": "Isolation delay",
+          "value": 0.0,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "label": "Adc delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "label": "Isr delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "label": "Pwm delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "label": "Known pure-delay total",
+          "value": 5e-08,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "label": "Known pure-delay phase loss",
+          "value": 0.054,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IAC_DELAY_MISSING",
+          "scope": "55_IAC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "55_IDC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "label": "Sensor delay",
+          "value": 0.0,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "label": "Isolation delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "label": "Adc delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "label": "Isr delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "label": "Pwm delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "label": "Known pure-delay total",
+          "value": 0.0,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "label": "Known pure-delay phase loss",
+          "value": 0.0,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IDC_DELAY_MISSING",
+          "scope": "55_IDC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: isolation, adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "55_VAC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "label": "Sensor delay",
+          "value": 0.0,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "label": "Isolation delay",
+          "value": 2.9e-06,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "label": "Adc delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "label": "Isr delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "label": "Pwm delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "label": "Known pure-delay total",
+          "value": 2.9e-06,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "label": "Known pure-delay phase loss",
+          "value": 0.03132,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VAC_DELAY_MISSING",
+          "scope": "55_VAC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "55_VDC_Delay": {
+      "status": "WARNING",
+      "metrics": {
+        "sensor_delay_s": {
+          "label": "Sensor delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isolation_delay_s": {
+          "label": "Isolation delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "adc_delay_s": {
+          "label": "Adc delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "isr_delay_s": {
+          "label": "Isr delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "pwm_delay_s": {
+          "label": "Pwm delay",
+          "value": null,
+          "unit": "s",
+          "formula": "",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "known_delay_total_s": {
+          "label": "Known pure-delay total",
+          "value": 0,
+          "unit": "s",
+          "formula": "sum(known delays)",
+          "inputs": "",
+          "source": "calculated",
+          "status": "PASS",
+          "note": ""
+        },
+        "known_delay_phase_deg": {
+          "label": "Known pure-delay phase loss",
+          "value": 0.0,
+          "unit": "deg",
+          "formula": "360*floop*Tdelay",
+          "inputs": "",
+          "source": "calculated",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VDC_DELAY_MISSING",
+          "scope": "55_VDC_Delay",
+          "status": "NOT_EVALUATED",
+          "message": "Delay budget is incomplete; missing: sensor, isolation, adc, isr, pwm.",
+          "recommendation": "Enter worst-case propagation/compute/PWM update delays before closing loop stability analysis."
+        }
+      ]
+    },
+    "60_IAC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "label": "Worst-case total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "label": "RSS total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IAC_ERROR_MISSING",
+          "scope": "60_IAC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    },
+    "60_IDC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "label": "Worst-case total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "label": "RSS total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "IDC_ERROR_MISSING",
+          "scope": "60_IDC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    },
+    "60_VAC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "label": "Worst-case total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "label": "RSS total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VAC_ERROR_MISSING",
+          "scope": "60_VAC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    },
+    "60_VDC_Error": {
+      "status": "WARNING",
+      "metrics": {
+        "wc_percent_fs": {
+          "label": "Worst-case total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        },
+        "rss_percent_fs": {
+          "label": "RSS total error",
+          "value": null,
+          "unit": "%FS",
+          "formula": "",
+          "inputs": "",
+          "source": "missing error sources",
+          "status": "NOT_EVALUATED",
+          "note": ""
+        }
+      },
+      "diagnostics": [
+        {
+          "code": "VDC_ERROR_MISSING",
+          "scope": "60_VDC_Error",
+          "status": "NOT_EVALUATED",
+          "message": "No channel error-source data are configured.",
+          "recommendation": "Enter exact device maximum gain/offset/drift/ADC/VREF errors before design release."
+        }
+      ]
+    }
+  },
+  "assumptions": [
+    {
+      "topic": "System power",
+      "value": "2.5 kW",
+      "source_type": "project context",
+      "qualification": "Confirm continuous and overload power for the actual test article."
+    },
+    {
+      "topic": "AC input range",
+      "value": "180–265 Vrms",
+      "source_type": "PMP23607 Rev. E2 schematic",
+      "qualification": "Observed hardware range."
+    },
+    {
+      "topic": "DC operating range",
+      "value": "370–420 V",
+      "source_type": "legacy software macros",
+      "qualification": "Provisional; confirm PMP23607 battery/output specification."
+    },
+    {
+      "topic": "Control bandwidths",
+      "value": "IAC 3 kHz; IDC 2 kHz; VDC 20 Hz; PLL 30 Hz",
+      "source_type": "engineering default",
+      "qualification": "Provisional; replace with measured plant/controller targets."
+    },
+    {
+      "topic": "Phase budgets",
+      "value": "IAC/IDC 15 deg; VDC/VAC PLL 5 deg; line VAC 0.5 deg",
+      "source_type": "engineering default",
+      "qualification": "User-confirmed MVP defaults."
+    },
+    {
+      "topic": "F29H85x internal ADC model",
+      "value": "Not populated",
+      "source_type": "missing authoritative parameter",
+      "qualification": "Exact acquisition model remains NOT_EVALUATED until data-sheet/model values are entered."
+    },
+    {
+      "topic": "Component error budgets",
+      "value": "Empty by default",
+      "source_type": "fail-closed design rule",
+      "qualification": "Enter exact maximum errors and drift before design release."
+    },
+    {
+      "topic": "Compliance layer",
+      "value": "GB/T 40432-2021",
+      "source_type": "national-standard profile",
+      "qualification": "Whole-product limits are kept separate from sensing-chain design targets; compliance still requires physical testing."
+    }
+  ]
+}
