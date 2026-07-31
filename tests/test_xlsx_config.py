@@ -73,3 +73,16 @@ class XlsxScalarConfigTest(unittest.TestCase):
         workbook.save(path)
         with self.assertRaisesRegex(ConfigError, r"Config Parameters!D.*formula"):
             load_xlsx(path)
+
+    def test_save_xlsx_rejects_a_non_xlsx_suffix(self) -> None:
+        path = self.root / "config.yaml"
+        with self.assertRaisesRegex(ConfigError, r"\.xlsx"):
+            save_xlsx(self.cfg, path)
+        self.assertFalse(path.exists())
+
+    def test_load_xlsx_rejects_a_non_xlsx_suffix(self) -> None:
+        workbook_path = save_xlsx(self.cfg, self.root / "config.xlsx")
+        mislabeled_path = workbook_path.with_suffix(".yaml")
+        workbook_path.rename(mislabeled_path)
+        with self.assertRaisesRegex(ConfigError, r"\.xlsx"):
+            load_xlsx(mislabeled_path)

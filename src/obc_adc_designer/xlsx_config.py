@@ -288,8 +288,14 @@ def _create_workbook(data: dict[str, Any], template: bool) -> Workbook:
     return workbook
 
 
+def _require_xlsx_path(path: Path) -> None:
+    if path.suffix.lower() != ".xlsx":
+        raise ConfigError(f"XLSX configuration files must use the .xlsx extension: {path}")
+
+
 def save_xlsx(data: dict[str, Any], path: str | Path, *, template: bool = False) -> Path:
     destination = Path(path)
+    _require_xlsx_path(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
     workbook = _create_workbook(data, template)
     workbook.save(destination)
@@ -343,6 +349,7 @@ def _validate_dynamic_phase_names(data: dict[str, Any]) -> None:
 
 def load_xlsx(path: str | Path, *, allow_partial: bool = False) -> dict[str, Any]:
     source = Path(path)
+    _require_xlsx_path(source)
     try:
         workbook = load_workbook(source, data_only=False)
     except OSError as exc:
